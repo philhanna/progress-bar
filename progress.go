@@ -40,11 +40,11 @@ func NewProgress(total int) *Progress {
 // Methods
 // ---------------------------------------------------------------------
 
-// Count adds n to the soFar counter, and triggers a display if the
+// Add adds n to the soFar counter, and triggers a display if the
 // percent complete is greater than the last percentage complete.
-func (p *Progress) Count(n int) {
+func (p *Progress) Add(n int) {
 	p.soFar += n
-	percent := int(float64(p.soFar) / float64(p.total))
+	percent := int(float64(p.soFar * 100) / float64(p.total))
 	if percent != p.lastPercent {
 		s := strings.Repeat("*", percent/2)
 		for len(s) < 50 {
