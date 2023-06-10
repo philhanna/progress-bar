@@ -1,8 +1,8 @@
 package main
 
 import (
-	"time"
 	pbar "github.com/philhanna/progress-bar"
+	"time"
 )
 
 const limit = 25000
